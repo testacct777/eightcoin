@@ -103,16 +103,16 @@ namespace parameters {
   const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
   } // parameters
 
-  const uint64_t START_BLOCK_REWARD                            = (UINT64_C(10) * parameters::POINT);
-  const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(50201467440) * parameters::COIN); // 50.2 billion ICO
+  const uint64_t START_BLOCK_REWARD                            = (UINT64_C(20) * parameters::POINT);
+  const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(200000000) * parameters::COIN);
   const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(2) * parameters::COIN);
   const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(2640));
 
 
-const char     CRYPTONOTE_NAME[]                             = "Testcoinx";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010101ff0001904e029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210153c752eef455da9571f8c5628ad70878cb50a383e7057cecaf5268712b3a39c2";
+const char     CRYPTONOTE_NAME[]                             = "Cryptox";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010101ff0001a09c01029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121012471e9575fb77bc087196b22f8a5e8273ee760412bcbc9986b66c9538097d92f";
 const uint32_t GENESIS_NONCE                                 = 70;
-const uint64_t GENESIS_TIMESTAMP                             = 1515479625;
+const uint64_t GENESIS_TIMESTAMP                             = 1522823565;
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -131,8 +131,8 @@ const int      RPC_DEFAULT_PORT                              = 20545;
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
 
-const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 1024 * 1024; // 2 MB
-const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;
+const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 128 * 1024 * 1024; // 128 MB
+const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 32;
 const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;
 const uint32_t P2P_DEFAULT_HANDSHAKE_INTERVAL                = 30;            // seconds
 const uint32_t P2P_DEFAULT_PACKET_MAX_SIZE                   = 5000000;      // 50000000 bytes maximum packet size
@@ -141,11 +141,11 @@ const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000;          //
 const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT           = 2000;          // 2 seconds
 const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutes
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
-const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "testf9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
+const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "crypf9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
 
 const std::initializer_list<const char*> SEED_NODES = {
-   "18.188.34.45:19545",
-  "18.221.170.151:19545",
+ "18.220.7.115:19545",
+  "18.222.89.31:19545",
 };
 
 struct CheckpointData {
