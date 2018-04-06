@@ -40,14 +40,14 @@ namespace parameters {
   static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
   const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 1;
-  const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 10000; //size of block (bytes) after which reward for block calculated using block size
-  const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
+  const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 20; //size of block (bytes) after which reward for block calculated using block size
+  const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 20;
   const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
   const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
   // COIN - number of smallest units in one coin
   const uint64_t POINT                                         = UINT64_C(1000);        // pow(10, 3)
   const uint64_t COIN                                          = UINT64_C(1000000);     // pow(10, 6)
-  const uint64_t MINIMUM_FEE                                   = UINT64_C(100);        // pow(10, 3)
+  const uint64_t MINIMUM_FEE                                   = UINT64_C(10);        // pow(10, 3)
   const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(10);         // pow(10, 2)
   // Use 0 for default max transaction size limit
   const uint64_t MAX_TRANSACTION_SIZE_LIMIT                    = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 125 / 100 - CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE;
@@ -60,7 +60,7 @@ namespace parameters {
   const size_t   DIFFICULTY_LAG                                = 1;
   static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
-  const uint64_t DEPOSIT_MIN_AMOUNT                            = 100 * COIN;
+  const uint64_t DEPOSIT_MIN_AMOUNT                            = 1 * COIN;
   const uint32_t DEPOSIT_MIN_TERM                              = 12000; //~1 month
   const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 12000; //~1 year
   const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; //rate is constant
@@ -111,7 +111,7 @@ namespace parameters {
 
 const char     CRYPTONOTE_NAME[]                             = "Cryptox";
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010101ff0001a09c01029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121012471e9575fb77bc087196b22f8a5e8273ee760412bcbc9986b66c9538097d92f";
-const uint32_t GENESIS_NONCE                                 = 70;
+const uint32_t GENESIS_NONCE                                 = 80;
 const uint64_t GENESIS_TIMESTAMP                             = 1522823565;
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
@@ -121,8 +121,8 @@ const uint8_t  BLOCK_MAJOR_VERSION_2                         =  2;
 const uint8_t  BLOCK_MINOR_VERSION_0                         =  0;
 const uint8_t  BLOCK_MINOR_VERSION_1                         =  1;
 
-const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by default, blocks ids count in synchronizing
-const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  500;    //by default, blocks count in blocks downloading
+const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10;  //by default, blocks ids count in synchronizing
+const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  5;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
 const int      P2P_DEFAULT_PORT                              = 19545;
@@ -144,8 +144,8 @@ const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          //
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "crypf9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
 
 const std::initializer_list<const char*> SEED_NODES = {
- "18.220.7.115:19545",
-  "18.222.89.31:19545",
+ "18.219.167.78:19545",
+  "18.219.10.61:19545",
 };
 
 struct CheckpointData {
